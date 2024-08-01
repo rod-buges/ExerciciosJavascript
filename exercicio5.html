@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<style>
+    body {
+        background-color: white;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        color: black;
+    }
+
+    .enunc {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    p {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form label {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+
+
+    .form input[type="checkbox"] {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .form input[type="checkbox"] + label {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    </style>
+
+<body>
+    
+    <h1 class="title">Exercício - 5</h1>
+    <p class="enunc"> Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O botão 
+        só se torna clicável quando tiver pelo menos 2 checkboxs marcado.</p>
+
+    <h2 class="subtitle">Monte o seu BMW</h2>
+
+    <form action="" method="post" class="form">
+        <label for="item1">Digite o seu nome:</label><br>
+        <input type="text" id="item1" name="item1" value="Nome">
+        <br>
+
+        <label for="item2">Digite o seu e-mail:</label><br>
+        <input type="text" id="item2" name="item2" value="E-mail">
+        <br>
+
+        <p class="enunc">Escolha a cor do seu BMW:</p>
+        <img src="img/320ipreto.png" alt="Preto">
+        <br>
+        <input onchange="checked()" type="checkbox" id="item6" name="item6" value="item6">
+        <label for="item6">Preto</label><br>
+
+        <img src="img/320ibranco.webp" alt="Branco">
+        <br>
+        <input onchange="checked()" type="checkbox" id="item7" name="item7" value="item7">
+        <label for="item7">Branco</label><br>
+
+        <img src="img/320iazul.png" alt="Azul">
+        <br>
+        <input onchange="checked()" type="checkbox" id="item8" name="item8" value="item8">
+        <label for="item8">Azul</label><br>
+
+        <p class="enunc">Escolha o modelo das rodas:</p>
+        <input onchange="checked()" type="checkbox" id="item9" name="item9" value="item9" disabled>
+        <label for="item9">Rodas Sport GP</label><br>
+        
+        <input onchange="checked()" type="checkbox" id="item10" name="item10" value="item10" disabled>
+        <label for="item10">Rodas M Performance</label><br>
+        <button type="submit" id="submit" disabled>Enviar</button>
+    </form>
+
+</body>
+
+
+<script>
+function checked() {
+    var item6 = document.getElementById('item6');
+    var item7 = document.getElementById('item7');
+    var item8 = document.getElementById('item8');
+    var item9 = document.getElementById('item9');
+    var item10 = document.getElementById('item10');
+
+    var colorChecked = item6.checked || item7.checked || item8.checked;
+
+    if (colorChecked) {
+        item9.disabled = false;
+        item10.disabled = false;
+    } else {
+        item9.disabled = true;
+        item10.disabled = true;
+    }
+}
+</script>
+
+</html>

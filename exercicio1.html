@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<style>
+    body {
+        background-color: white;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        color: black;
+    }
+
+    .enunc {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .botoes {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #botao1 {
+        background-color: red;
+        color: white;
+    }
+
+    #botao2 {
+        background-color: green;
+        color: white;
+    }
+
+    #botao3 {
+        background-color: blue;
+        color: white;
+    }
+
+    #botao4 {
+        background-color: yellow;
+        color: black;
+    }
+
+
+    .botoes:hover {
+        background-color: black;
+        color: white;
+    }
+    </style>
+
+<body>
+    
+        <h1 class="title">Exercício - 1<h1>
+                <p class="enunc">Crie um formulário com 4 botões que, ao clicar em cada um, altere a cor do plano de fundo da página
+                    para vermelho,
+                    verde, azul e amarelo, respectivamente.</p>
+
+                    <h2 class="subtitle">Clique nos botôes para mudar a cor do background</h2>
+                <button id="botao1" class="botoes">Vermelho</button>
+                <button id="botao2" class="botoes">Verde</button>
+                <button id="botao3" class="botoes">Azul</button>
+                <button id="botao4" class="botoes">Amarelo</button>
+
+</body>
+
+<script>
+    document.getElementById("botao1").addEventListener("click", function() {
+        document.body.style.backgroundColor = "red";
+    });
+
+    document.getElementById("botao2").addEventListener("click", function() {
+        document.body.style.backgroundColor = "green";
+    });
+
+    document.getElementById("botao3").addEventListener("click", function() {
+        document.body.style.backgroundColor = "blue";
+    });
+
+    document.getElementById("botao4").addEventListener("click", function() {
+        document.body.style.backgroundColor = "yellow";
+    });
+</script>
+
+</html>

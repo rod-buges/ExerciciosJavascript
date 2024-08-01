@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<style>
+    body {
+        background-color: white;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        color: black;
+    }
+
+    .enunc {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    .list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+
+    .list-item {
+        margin: 10px;
+        margin: 10px;    
+    }
+
+    .input {
+        display: block;
+        margin: 0 auto;
+        width: 50px;
+        height: 20px;
+    }
+
+    .list-title {
+        text-align: center;
+        font-size: 20px;
+        color: black;
+    }
+
+    </style>
+
+<body>
+    
+        <h1 class="title">Exercício - 3<h1>
+                <p class="enunc"> Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de cor, 
+                    altere o plano de fundo da página para a cor específica.</p>
+
+                    <h2 class="subtitle">Selecione a cor:</h2>
+                        <ul class="list">
+                            <li class="list-item">
+                                <p for="input1" class="list-title">Vermelho</p>
+                                <input type="radio" id="input1" value="Vermelho" class="input">
+                            </li>
+                            <li>
+                                <p for="input2" class="list-title">Amarelo</p>
+                                <input type="radio" id="input2" value="Amarelo" class="input">
+                            </li>
+                            <li>
+                                <p for="input3" class="list-title">Azul</p>
+                                <input type="radio" id="input3" value="Azul" class="input">
+                            </li>
+                            <li>
+                                <p for="input4" class="list-title">Verde</p>
+                                <input type="radio" id="input4" value="Verde" class="input">
+                            </li>
+                        </ul>
+
+</body>
+
+<script>
+    function changeColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+
+    document.getElementById('input1').addEventListener('click', function() {
+        changeColor('red');
+    });
+
+    document.getElementById('input2').addEventListener('click', function() {
+        changeColor('yellow');
+    });
+
+    document.getElementById('input3').addEventListener('click', function() {
+        changeColor('blue');
+    });
+
+    document.getElementById('input4').addEventListener('click', function() {
+        changeColor('green');
+    });
+
+    
+
+</script>
+
+</html>

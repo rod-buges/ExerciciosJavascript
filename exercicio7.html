@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            color: black;
+        }
+
+        .enunc {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .color-button,
+        .font-button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Exercício - 7</h1>
+    <p class="enunc">Crie um botão + (mais) e outro – (menos) na mesma página do exercício anterior. Esses botões aumentam e
+        diminuem o tamanho da fonte, respectivamente.</p>
+    <h2 class="subtitle">Clique nos botôes abaixo</h2>
+
+    <div class="button-container">
+        <button class="color-button" onclick="changeBackgroundColor('red')">Vermelho</button>
+        <button class="color-button" onclick="changeBackgroundColor('green')">Verde</button>
+        <button class="color-button" onclick="changeBackgroundColor('blue')">Azul</button>
+        <button class="color-button" onclick="changeBackgroundColor('yellow')">Amarelo</button>
+    </div>
+
+    <h2 class="subtitle">Clique nos botões para ajustar o tamanho da fonte</h2>
+    <div class="button-container">
+        <button class="font-button" onclick="changeFontSize('increase')">+</button>
+        <button class="font-button" onclick="changeFontSize('decrease')">-</button>
+    </div>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function changeFontSize(action) {
+            const elements = document.querySelectorAll('.title, .enunc, .subtitle');
+            elements.forEach(element => {
+                const currentFontSize = window.getComputedStyle(element).fontSize;
+                const currentSize = parseFloat(currentFontSize);
+                if (action === 'increase') {
+                    element.style.fontSize = (currentSize + 2) + 'px';
+                } else if (action === 'decrease') {
+                    element.style.fontSize = (currentSize - 2) + 'px';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

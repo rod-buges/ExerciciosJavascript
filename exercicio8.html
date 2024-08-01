@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            color: black;
+        }
+
+        .enunc {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .paragrafo1 {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+
+        .buttons {
+            background-color: #000c75;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .buttons:hover {
+            background-color: #000c756f;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Exercício - 8</h1>
+    <p class="enunc">Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e outro
+        em minúscula.</p>
+    <h2 class="subtitle">Clique nos botões abaixo</h2>
+    <p class="paragrafo1">Trocar a minha cor!</p>
+    <div class="button-container">
+        <button class="buttons" id="botao1">Trocar cor da fonte</button>
+        <button class="buttons" id="botao2">Trocar cor do fundo</button>
+        <button class="buttons" id="botao3">Trocar cor da fonte</button>
+        <button class="buttons" id="botao4">Trocar cor do fundo</button>
+        <button class="buttons" id="botaoMaiuscula">Texto em Maiúscula</button>
+        <button class="buttons" id="botaoMinuscula">Texto em Minúscula</button>
+    </div>
+
+    <script>
+        var paragrafo = document.querySelector('.paragrafo1');
+        var botao1 = document.querySelector('#botao1');
+        var botao2 = document.querySelector('#botao2');
+        var botao3 = document.querySelector('#botao3');
+        var botao4 = document.querySelector('#botao4');
+        var botaoMaiuscula = document.querySelector('#botaoMaiuscula');
+        var botaoMinuscula = document.querySelector('#botaoMinuscula');
+        var corFonte = 'black';
+        var corFundo = 'white';
+
+        botao1.addEventListener('click', function() {
+            corFonte = (corFonte === 'black') ? 'white' : 'black';
+            paragrafo.style.color = corFonte;
+        });
+
+        botao2.addEventListener('click', function() {
+            corFundo = (corFundo === 'white') ? 'black' : 'white';
+            paragrafo.style.backgroundColor = corFundo;
+        });
+
+        botao3.addEventListener('click', function() {
+            corFonte = (corFonte === 'black') ? 'white' : 'black';
+            paragrafo.style.color = corFonte;
+        });
+
+        botao4.addEventListener('click', function() {
+            corFundo = (corFundo === 'white') ? 'black' : 'white';
+            paragrafo.style.backgroundColor = corFundo;
+        });
+
+        botaoMaiuscula.addEventListener('click', function() {
+            paragrafo.style.textTransform = 'uppercase';
+        });
+
+        botaoMinuscula.addEventListener('click', function() {
+            paragrafo.style.textTransform = 'lowercase';
+        });
+    </script>
+</body>
+
+</html>
